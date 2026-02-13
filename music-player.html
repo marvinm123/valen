@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+</head>
+<body>
+    <audio id="bgMusic" src="music/Christina Perri - A Thousand Years Official Music Video.mp3" loop preload="auto"></audio>
+    
+    <script>
+        const bgMusic = document.getElementById('bgMusic');
+        
+        // Check if music should be playing from previous page
+        window.addEventListener('load', function() {
+            const shouldPlay = sessionStorage.getItem('musicPlaying');
+            const savedTime = sessionStorage.getItem('musicTime');
+            
+            if (shouldPlay === 'true') {
+                if (savedTime) {
+                    bgMusic.currentTime = parseFloat(savedTime);
+                }
+                bgMusic.volume = 1;
+                bgMusic.play().catch((error) => {
+                    console.log('Autoplay prevented:', error);
+                });
+            }
+            
+            // Continuously save current time
+            setInterval(() => {
+                if (!bgMusic.paused) {
+                    sessionStorage.setItem('musicTime', bgMusic.currentTime.toString());
+                }
+            }, 500);
+        });
+        
+        // Listen for messages from parent window
+        window.addEventListener('message', function(event) {
+            if (event.data.action === 'play') {
+                sessionStorage.setItem('musicPlaying', 'true');
+                bgMusic.volume = 0;
+                bgMusic.play().then(() => {
+                    // Fade in music
+                    let volume = 0;
+                    const fadeIn = setInterval(() => {
+                        if (volume < 1) {
+                            volume += 0.05;
+                            bgMusic.volume = Math.min(volume, 1);
+                        } else {
+                            clearInterval(fadeIn);
+                        }
+                    }, 100);
+                }).catch((error) => {
+                    console.log('Autoplay prevented:', error);
+                });
+            } else if (event.data.action === 'pause') {
+                bgMusic.pause();
+                sessionStorage.setItem('musicPlaying', 'false');
+            } else if (event.data.action === 'setVolume') {
+                bgMusic.volume = event.data.volume;
+            }
+        });
+        
+        // Notify parent that player is ready
+        if (window.parent !== window) {
+            window.parent.postMessage({ status: 'ready' }, '*');
+        }
+    </script>
+</body>
+</html>
