@@ -3,547 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Trisha ❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Italiana&family=Playfair+Display:wght@400;700;900&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <title>Image Text Effect</title>
     <style>
-        :root {
-            --rose-dark: #8B0042;
-            --rose-deep: #2D0320;
-            --rose-mid: #D84A76;
-            --rose-light: #E585A3;
-            --rose-blush: #FFE8F0;
-            --rose-pearl: #FFF5F8;
-            --gold-accent: #FFD700;
-        }
-
-        * {
+        html {
+            height: 100%;
+            width: 100%;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Cormorant Garamond', serif;
-            overflow-x: hidden;
-            background: var(--rose-deep);
-            position: relative;
-        }
-
-        /* Animated gradient background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(216, 74, 118, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(139, 0, 66, 0.15) 0%, transparent 50%),
-                linear-gradient(135deg, #8B0042 0%, #2D0320 100%);
-            z-index: -1;
-            animation: gradientShift 15s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-
-        /* Noise texture overlay */
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 1;
-            mix-blend-mode: overlay;
-        }
-
-        .main-container {
-            width: 100%;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Landing Page */
-        .landing-area {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
+            background: #000;
+            height: 100vh;
+            width: 100vw;
             overflow: hidden;
-            padding: 20px;
-        }
-
-        /* Floating hearts with varied sizes and speeds */
-        .heart {
-            position: absolute;
-            color: rgba(255, 255, 255, 0.15);
-            font-size: 30px;
-            animation: float 12s infinite ease-in-out;
-            pointer-events: none;
-            filter: blur(0.5px);
-        }
-
-        @keyframes float {
-            0% { 
-                transform: translateY(0) rotate(0deg) scale(0.8);
-                opacity: 0;
-            }
-            10% { opacity: 0.4; }
-            90% { opacity: 0.4; }
-            100% { 
-                transform: translateY(-110vh) rotate(360deg) scale(1.2);
-                opacity: 0;
-            }
-        }
-
-        /* Decorative roses with glow */
-        .rose {
-            position: absolute;
-            font-size: 60px;
-            opacity: 0.2;
-            animation: rotateGlow 25s linear infinite;
-            filter: drop-shadow(0 0 20px rgba(216, 74, 118, 0.3));
-        }
-
-        @keyframes rotateGlow {
-            from { 
-                transform: rotate(0deg) scale(1);
-                opacity: 0.2;
-            }
-            50% {
-                opacity: 0.3;
-                transform: rotate(180deg) scale(1.1);
-            }
-            to { 
-                transform: rotate(360deg) scale(1);
-                opacity: 0.2;
-            }
-        }
-
-        .rose1 { top: 10%; left: 10%; animation-delay: 0s; }
-        .rose2 { top: 20%; right: 12%; animation-delay: -7s; }
-        .rose3 { bottom: 15%; left: 15%; animation-delay: -14s; }
-        .rose4 { bottom: 10%; right: 8%; animation-delay: -21s; }
-
-        .container {
-            text-align: center;
-            color: white;
-            z-index: 10;
-            position: relative;
-        }
-
-        /* Main title with elegant styling */
-        h1 {
-            font-family: 'Italiana', serif;
-            font-size: clamp(50px, 15vw, 140px);
-            font-weight: 400;
-            letter-spacing: clamp(10px, 3vw, 25px);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            background: linear-gradient(135deg, #FFFFFF 0%, #FFE8F0 50%, #FFFFFF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            filter: drop-shadow(0 0 40px rgba(255, 192, 203, 0.6))
-                    drop-shadow(0 0 80px rgba(255, 105, 180, 0.4));
-            animation: shimmer 3s ease-in-out infinite;
-            position: relative;
-        }
-
-        @keyframes shimmer {
-            0%, 100% {
-                filter: drop-shadow(0 0 40px rgba(255, 192, 203, 0.6))
-                        drop-shadow(0 0 80px rgba(255, 105, 180, 0.4));
-            }
-            50% {
-                filter: drop-shadow(0 0 60px rgba(255, 255, 255, 0.8))
-                        drop-shadow(0 0 120px rgba(255, 105, 180, 0.6));
-            }
-        }
-
-        /* Decorative line above title */
-        h1::before {
-            content: '✦';
-            position: absolute;
-            top: clamp(-30px, -5vw, -50px);
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: clamp(16px, 3vw, 24px);
-            opacity: 0.6;
-            animation: twinkle 2s ease-in-out infinite;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.4; transform: translateX(-50%) scale(1); }
-            50% { opacity: 1; transform: translateX(-50%) scale(1.2); }
-        }
-
-        .subtitle {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(18px, 4vw, 28px);
-            font-weight: 300;
-            margin-bottom: 60px;
-            letter-spacing: clamp(4px, 1.5vw, 8px);
-            opacity: 0.95;
-            text-transform: uppercase;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 0.95; transform: translateY(0); }
-        }
-
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            cursor: pointer;
-            animation: bounce 2.5s infinite;
-            transition: all 0.3s ease;
-        }
-
-        .scroll-indicator:hover {
-            transform: translateX(-50%) scale(1.1);
-        }
-
-        .scroll-indicator svg {
-            width: 45px;
-            height: 45px;
-            fill: white;
-            opacity: 0.7;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
-            transition: opacity 0.3s;
-        }
-
-        .scroll-indicator:hover svg {
-            opacity: 1;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-25px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-12px);
-            }
-        }
-
-        .scroll-text {
-            color: white;
-            font-size: clamp(11px, 2vw, 13px);
-            margin-bottom: 12px;
-            opacity: 0.7;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 300;
-        }
-
-        /* Envelope Section */
-        .envelope-area {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            position: relative;
-        }
-
-        .envelope-container {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .envelope-wrapper {
-            position: relative;
-            width: min(350px, 90vw);
-            height: min(220px, 56vw);
-            margin: 0 auto 40px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .envelope-wrapper:hover {
-            transform: scale(1.05);
-        }
-
-        .envelope-wrapper.opened {
-            cursor: default;
-        }
-
-        .envelope-wrapper.opened:hover {
-            transform: scale(1);
-        }
-
-        .envelope {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            animation: floatEnvelope 3s ease-in-out infinite;
-        }
-
-        .envelope-wrapper.opened .envelope {
-            animation: none;
-        }
-
-        @keyframes floatEnvelope {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .envelope-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #D84A76 0%, #B8396B 100%);
-            border-radius: 8px;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
-        }
-
-        .envelope-front {
-            position: absolute;
-            width: 0;
-            height: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            border-left: calc(min(350px, 90vw) / 2) solid transparent;
-            border-right: calc(min(350px, 90vw) / 2) solid transparent;
-            border-bottom: calc(min(220px, 56vw) / 2) solid #E585A3;
-            transform-origin: top center;
-            transition: transform 0.6s ease;
-            z-index: 3;
-        }
-
-        .envelope-wrapper.opened .envelope-front {
-            transform: rotateX(-180deg);
-        }
-
-        .envelope-flap {
-            position: absolute;
-            width: 0;
-            height: 0;
-            top: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            border-left: calc(min(350px, 90vw) / 2) solid transparent;
-            border-right: calc(min(350px, 90vw) / 2) solid transparent;
-            border-top: calc(min(220px, 56vw) / 2) solid #D84A76;
-            transform-origin: top center;
-            transition: transform 0.6s ease;
-            z-index: 2;
-        }
-
-        .envelope-wrapper.opened .envelope-flap {
-            transform: rotateX(-180deg);
-        }
-
-        .letter {
-            position: absolute;
-            width: min(400px, 90vw);
-            height: min(600px, 80vh);
-            background: linear-gradient(135deg, #FFF5F8 0%, #FFE8F0 100%);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.7);
-            border-radius: 8px;
-            padding: clamp(30px, 5vw, 50px) clamp(20px, 4vw, 40px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            transition: all 0.8s ease 0.3s;
             opacity: 0;
-            z-index: 4;
-            overflow-y: auto;
-            pointer-events: none;
+            animation: fadeInPage 2s ease-in-out forwards;
         }
 
-        .envelope-wrapper.opened .letter {
-            transform: translate(-50%, 20%) scale(1);
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .letter-content {
-            font-family: 'Dancing Script', cursive;
-            color: #8B0042;
-            font-size: clamp(16px, 3vw, 20px);
-            line-height: 1.8;
-            text-align: center;
-        }
-
-        .letter-content h2 {
-            font-family: 'Great Vibes', cursive;
-            font-size: clamp(32px, 7vw, 50px);
-            margin-bottom: 25px;
-            color: #D84A76;
-        }
-
-        .letter-content p {
-            margin-bottom: 20px;
-        }
-
-        .letter-signature {
-            margin-top: 40px;
-            font-size: clamp(20px, 4vw, 28px);
-            font-style: italic;
-        }
-
-        .click-text {
-            position: absolute;
-            bottom: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: clamp(14px, 2.5vw, 16px);
-            animation: pulse 2s ease-in-out infinite;
-            opacity: 1;
-            transition: opacity 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .envelope-wrapper.opened .click-text {
-            opacity: 0;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
-        }
-
-        .redirect-btn {
-            display: inline-block;
-            margin-top: clamp(400px, 50vh, 650px);
-            padding: clamp(12px, 2vw, 15px) clamp(30px, 5vw, 40px);
-            background: linear-gradient(135deg, #D84A76 0%, #B8396B 100%);
-            border: 2px solid white;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: clamp(15px, 2.5vw, 18px);
-            font-weight: bold;
-            box-shadow: 0 5px 30px rgba(216, 74, 118, 0.4);
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.8s ease;
-        }
-
-        .redirect-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 40px rgba(216, 74, 118, 0.6);
-            background: linear-gradient(135deg, #E585A3 0%, #D84A76 100%);
-        }
-
-        /* Gallery Flip Book Section */
-        .gallery-area {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 60px 20px;
-            position: relative;
-            opacity: 0;
-            animation: galleryFadeIn 1.5s ease-in-out forwards;
-        }
-
-        @keyframes galleryFadeIn {
+        @keyframes fadeInPage {
             0% {
                 opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        #hedlinecontainer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 60px;
-            z-index: 10;
-            opacity: 0;
-            animation: headlineFadeIn 1s ease-in-out 0.3s forwards;
-            padding: 0 20px;
-        }
-
-        @keyframes headlineFadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        #shine {
-            font-size: clamp(28px, 8vw, 70px);
-            font-weight: bold;
-            color: rgba(255, 0, 102, 0.3);
-            z-index: 10;
-            background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
-            -webkit-background-size: 150px;
-            -webkit-background-clip: text;
-            -webkit-animation-name: shine;
-            -webkit-animation-duration: 3s;
-            -webkit-animation-iteration-count: infinite;
-            text-shadow: 0 0px 0px rgba(233, 85, 189, 0.419);
-            text-align: center;
-        }
-
-        @-webkit-keyframes shine {
-            0%, 10% {
-                background-position: -1000px;
-            }
-            20% {
-                background-position: top left;
-            }
-            90% {
-                background-position: top right;
-            }
-            100% {
-                background-position: 1000px;
-            }
-        }
-
-        .gallery {
-            --d: 10s;
-            display: grid;
-            place-items: center;
-            width: min(300px, 70vw);
-            opacity: 0;
-            animation: galleryAppear 1s ease-in-out 0.6s forwards;
-        }
-
-        @keyframes galleryAppear {
-            0% {
-                opacity: 0;
-                transform: scale(0.8);
+                transform: scale(0.95);
             }
             100% {
                 opacity: 1;
@@ -551,397 +34,1727 @@
             }
         }
 
-        .gallery > img {
-            grid-area: 1/1;
+        p {
+            font-size: clamp(8px, 1.5vw, 12px);
+            line-height: clamp(6px, 1.2vw, 8px);
+            text-align: justify;
+            margin: 0;
+            padding: clamp(10px, 2vw, 20px);
+            height: 100%;
             width: 100%;
-            aspect-ratio: 1;
-            object-fit: cover;
-            border: 10px solid #f2f2f2;
-            box-shadow: 0 0 4px #0007;
-            z-index: 2;
-            animation: slide var(--d) infinite, z-order var(--d) infinite steps(1);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery img:last-child {
-            animation-name: slide, z-order-last;
-        }
-
-        .gallery > img:nth-child(1) {
-            animation-delay: calc(0*var(--d));
-            --r: 16deg;
-        }
-
-        .gallery > img:nth-child(2) {
-            animation-delay: calc(-0.25*var(--d));
-            --r: -1deg;
-        }
-
-        .gallery > img:nth-child(3) {
-            animation-delay: calc(-0.5*var(--d));
-            --r: -19deg;
-        }
-
-        .gallery > img:nth-child(4) {
-            animation-delay: calc(-0.75*var(--d));
-            --r: 6deg;
-        }
-
-        @keyframes slide {
-            10% {
-                transform: translateX(120%) rotate(var(--r));
-            }
-            0%, 100%, 20% {
-                transform: translateX(0%) rotate(var(--r));
-            }
-        }
-
-        @keyframes z-order {
-            10%, 20% {
-                z-index: 1;
-            }
-            80% {
-                z-index: 2;
-            }
-        }
-
-        @keyframes z-order-last {
-            10%, 20% {
-                z-index: 1;
-            }
-            90% {
-                z-index: 2;
-            }
-        }
-
-        .final-btn {
-            display: inline-block;
-            margin-top: 50px;
-            padding: clamp(15px, 2.5vw, 20px) clamp(40px, 7vw, 60px);
-            background: linear-gradient(135deg, var(--rose-mid) 0%, #B8396B 100%);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: clamp(15px, 2.5vw, 18px);
-            font-weight: 600;
-            letter-spacing: clamp(1px, 0.3vw, 2px);
-            text-transform: uppercase;
-            font-family: 'Cormorant Garamond', serif;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 30px rgba(216, 74, 118, 0.5);
-            position: relative;
-            overflow: hidden;
+            background: url(xt2.jpg) no-repeat center center fixed;
+            background-size: cover;
+            background-attachment: fixed;
+            filter: brightness(1.2) contrast(1.5) saturate(1.3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             opacity: 0;
-            animation: buttonFadeIn 1s ease-in-out 1s forwards;
+            overflow-y: auto;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            hyphens: auto;
         }
 
-        @keyframes buttonFadeIn {
+        p.typing {
+            animation: revealText 4s ease-out forwards;
+        }
+
+        @keyframes revealText {
             0% {
                 opacity: 0;
-                transform: translateY(20px);
+                letter-spacing: 20px;
+                filter: blur(10px) brightness(0);
+            }
+            50% {
+                opacity: 0.5;
+                filter: blur(5px) brightness(0.6);
             }
             100% {
                 opacity: 1;
-                transform: translateY(0);
+                letter-spacing: 0px;
+                filter: blur(0px) brightness(1.2) contrast(1.5) saturate(1.3);
             }
         }
 
-        .final-btn::before {
-            content: '';
-            position: absolute;
+        /* Typing effect for individual characters */
+        p.char-by-char {
+            overflow: hidden;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        @keyframes typeWriter {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        /* Loading overlay */
+        .loading-overlay {
+            position: fixed;
             top: 0;
-            left: -100%;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
+            background: linear-gradient(135deg, #8B0042 0%, #2D0320 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeOutOverlay 0.8s ease-in-out 0.5s forwards;
+            padding: 20px;
         }
 
-        .final-btn:hover::before {
-            left: 100%;
+        @keyframes fadeOutOverlay {
+            to {
+                opacity: 0;
+                pointer-events: none;
+            }
         }
 
-        .final-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(216, 74, 118, 0.7);
-            border-color: rgba(255, 255, 255, 0.5);
+        .loading-text {
+            color: white;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(18px, 3vw, 24px);
+            letter-spacing: clamp(2px, 0.4vw, 3px);
+            animation: pulse 1.5s ease-in-out infinite;
+            text-align: center;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
         }
 
         /* Mobile-specific adjustments */
         @media (max-width: 768px) {
-            .rose {
-                font-size: 40px;
+            p {
+                font-size: 10px;
+                line-height: 7px;
+                padding: 15px;
             }
 
-            .landing-area,
-            .envelope-area,
-            .gallery-area {
-                padding: 20px;
-            }
-
-            .scroll-indicator {
-                bottom: 20px;
-            }
-
-            .envelope-wrapper {
-                margin-bottom: 60px;
-            }
-
-            .click-text {
-                bottom: -60px;
-            }
-
-            .gallery {
-                width: min(250px, 80vw);
+            /* Improve readability on mobile */
+            body {
+                background: #111;
             }
         }
 
         @media (max-width: 480px) {
-            .rose {
-                font-size: 30px;
-            }
-
-            h1 {
-                margin-bottom: 15px;
-            }
-
-            .subtitle {
-                margin-bottom: 40px;
-            }
-
-            .gallery {
-                width: min(200px, 85vw);
-            }
-
-            .final-btn {
-                margin-top: 40px;
+            p {
+                font-size: 9px;
+                line-height: 6.5px;
+                padding: 10px;
             }
         }
 
-        /* Fix for very small screens */
+        /* Very small screens */
         @media (max-width: 360px) {
-            .letter {
-                padding: 25px 15px;
-            }
-
-            .gallery > img {
-                border: 7px solid #f2f2f2;
+            p {
+                font-size: 8px;
+                line-height: 6px;
+                padding: 8px;
             }
         }
 
         /* Landscape mode on mobile */
         @media (max-height: 500px) and (orientation: landscape) {
-            .landing-area,
-            .envelope-area,
-            .gallery-area {
-                min-height: auto;
-                padding: 30px 20px;
+            p {
+                font-size: 8px;
+                line-height: 6px;
+                padding: 10px;
             }
+        }
 
-            .scroll-indicator {
-                display: none;
+        /* Tablet landscape */
+        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+            p {
+                font-size: 11px;
+                line-height: 7.5px;
+                padding: 20px;
             }
+        }
 
-            .letter {
-                height: 85vh;
+        /* Fix for iOS Safari background-attachment: fixed issue */
+        @supports (-webkit-overflow-scrolling: touch) {
+            p {
+                background-attachment: scroll;
             }
+        }
+
+        /* Smooth scrolling for mobile */
+        p {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Hide scrollbar but keep functionality */
+        p::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        p {
+            scrollbar-width: none;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="main-container">
-        <!-- Hidden music player iframe -->
-        <iframe id="musicPlayer" src="music-player.html" style="display:none;"></iframe>
-        
-        <!-- Landing Page -->
-        <div class="landing-area" id="landing">
-            <div class="rose rose1">🌹</div>
-            <div class="rose rose2">🌹</div>
-            <div class="rose rose3">🌹</div>
-            <div class="rose rose4">🌹</div>
-
-            <div class="container">
-                <h1>Trisha</h1>
-                <p class="subtitle">My Love</p>
-            </div>
-
-            <div class="scroll-indicator" onclick="scrollToEnvelope()">
-                <p class="scroll-text">Scroll Down</p>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M12 16.5l-6-6 1.41-1.41L12 13.67l4.59-4.58L18 10.5z"/>
-                </svg>
-            </div>
-        </div>
-
-        <!-- Envelope Section -->
-        <div class="envelope-area" id="envelope">
-            <div class="envelope-container">
-                <div class="envelope-wrapper" id="envelopeWrapper">
-                    <div class="envelope">
-                        <div class="envelope-back"></div>
-                        <div class="envelope-flap"></div>
-                        <div class="envelope-front"></div>
-                        <div class="letter">
-                            <div class="letter-content">
-                                <h2>To my pretty baby</h2>
-                                <p>iloveeeyouuuu babyyyy hehehe sorry kung usahay permi ka masuko sakoa hehe maski wakoy gibuhat gud masuko man jud ka HAHAHA</p>
-                                <p>pero bitaw kabalo ko love kayko nimo hehe sorry if permi ka mag selos maski waka unsaa loveee love kaayo taka kabalo man ka ana oys</p>
-                                <p>thank you for being a supportive girlfriend thank for everything love maski usahay stress na kayko imo pajud dungagan akong ka stress huhu</p>
-                                <p>jokeee HAHAHHA bitaw iloveeeyouuuuu babyyy always and forever❤️ </p>
-                                <p class="letter-signature">imong baby boy hehe</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="click-text">Click to open 💌</div>
-                </div>
-                <a href="#gallery" class="redirect-btn" id="redirectBtn">Continue to Memories</a>
-            </div>
-        </div>
-
-        <!-- Gallery Flip Book Section -->
-        <div class="gallery-area" id="gallery">
-            <div id="hedlinecontainer">
-                <div id="shine">Happy Valentine's Day💞</div>
-            </div>
-            
-            <div class="gallery">
-                <img src="xt1.jpg" alt="Our Beautiful Memory">
-                <img src="xt2.jpg" alt="Our Special Moments">
-                <img src="xt3.jpg" alt="Together Forever">
-                <img src="xt4.jpg" alt="Love Always">
-            </div>
-
-            <a href="index.html" class="final-btn">Read My Message 💌</a>
-        </div>
+    <!-- Hidden music player iframe -->
+    <iframe id="musicPlayer" src="music-player.html" style="display:none;"></iframe>
+    
+    <div class="loading-overlay">
+        <div class="loading-text">Loading your message...</div>
     </div>
 
+    <p id="textContent">
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+I'll love you for a thousand more 
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+I'll love you for a thousand more 
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+I'll love you for a thousand more 
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+I'll love you for a thousand more 
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+I'll love you for a thousand more 
+
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+I'll love you for a thousand more 
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+I'll love you for a thousand more 
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+I'll love you for a thousand more 
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+I'll love you for a thousand more 
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+I'll love you for a thousand more 
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Heart beats fast
+Colors and promises
+How to be brave?
+How can I love when I'm afraid to fall?
+But watching you stand alone
+All of my doubt suddenly goes away somehow
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time stands still
+Beauty in all she is
+I will be brave
+I will not let anything take away
+What's standing in front of me
+Every breath, every hour has come to this
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+One step closer
+One step closer
+I have died every day waiting for you
+Darling, don't be afraid
+I have loved you for a thousand years
+I'll love you for a thousand more
+And all along I believed I would find you
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+Time has brought your heart to me
+I have loved you for a thousand years
+I'll love you for a thousand more
+I'll love you for a thousand more 
+
+
+    </p>
+
     <script>
-        let musicPlayerIframe;
+        // Music continues in iframe - no need to restart it
         
-        // Initialize music player
+        // Trigger text animation after loading overlay
         window.addEventListener('load', function() {
-            musicPlayerIframe = document.getElementById('musicPlayer');
+            setTimeout(function() {
+                const textElement = document.getElementById('textContent');
+                textElement.classList.add('typing');
+            }, 1000);
         });
-        // Scroll to envelope section
-        function scrollToEnvelope() {
-            document.getElementById('envelope').scrollIntoView({ behavior: 'smooth' });
-        }
 
-        // Enhanced floating hearts in all sections
-        function createHeart() {
-            const sections = [
-                document.querySelector('.landing-area'),
-                document.querySelector('.envelope-area'),
-                document.querySelector('.gallery-area')
-            ];
-            
-            const section = sections[Math.floor(Math.random() * sections.length)];
-            
-            if (section) {
-                const heart = document.createElement('div');
-                heart.className = 'heart';
-                heart.textContent = '❤';
-                heart.style.left = Math.random() * 100 + '%';
-                heart.style.animationDelay = Math.random() * 5 + 's';
-                heart.style.fontSize = (Math.random() * 40 + 20) + 'px';
-                heart.style.animationDuration = (Math.random() * 4 + 10) + 's';
-                section.appendChild(heart);
-                
-                setTimeout(() => heart.remove(), 14000);
+        // Prevent zoom on double-tap for iOS
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
             }
-        }
-
-        setInterval(createHeart, 600);
-        
-        // Create initial hearts
-        for (let i = 0; i < 20; i++) {
-            setTimeout(createHeart, i * 150);
-        }
-
-        // Envelope interaction with smooth music start
-        const envelopeWrapper = document.getElementById('envelopeWrapper');
-        const redirectBtn = document.getElementById('redirectBtn');
-        
-        envelopeWrapper.addEventListener('click', function() {
-            if (!this.classList.contains('opened')) {
-                this.classList.add('opened');
-                
-                // Start music via iframe
-                if (musicPlayerIframe && musicPlayerIframe.contentWindow) {
-                    musicPlayerIframe.contentWindow.postMessage({ action: 'play' }, '*');
-                }
-                
-                // Show button after 10 seconds
-                setTimeout(() => {
-                    redirectBtn.style.opacity = '1';
-                    redirectBtn.style.pointerEvents = 'all';
-                }, 10000);
-            }
-        });
-
-        // Smooth page transition for final button
-        const finalBtn = document.querySelector('.final-btn');
-        if (finalBtn) {
-            finalBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetUrl = this.getAttribute('href');
-                
-                // Create fade out overlay
-                const overlay = document.createElement('div');
-                overlay.style.cssText = `
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: linear-gradient(135deg, #8B0042 0%, #2D0320 100%);
-                    z-index: 99999;
-                    opacity: 0;
-                    transition: opacity 0.8s ease-in-out;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                `;
-                
-                const loadingText = document.createElement('div');
-                loadingText.textContent = 'Opening your message...';
-                loadingText.style.cssText = `
-                    color: white;
-                    font-family: 'Cormorant Garamond', serif;
-                    font-size: clamp(18px, 3vw, 24px);
-                    letter-spacing: 3px;
-                    opacity: 0;
-                    transition: opacity 0.5s ease-in-out 0.3s;
-                    text-align: center;
-                    padding: 0 20px;
-                `;
-                
-                overlay.appendChild(loadingText);
-                document.body.appendChild(overlay);
-                
-                // Trigger animations
-                setTimeout(() => {
-                    overlay.style.opacity = '1';
-                    loadingText.style.opacity = '1';
-                }, 10);
-                
-                // Navigate after animation
-                setTimeout(() => {
-                    window.location.href = targetUrl;
-                }, 1000);
-            });
-        }
-
-        // Parallax effect on scroll
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.rose');
-            parallaxElements.forEach((el, index) => {
-                const speed = 0.3 + (index * 0.1);
-                el.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
-            });
-        });
+            lastTouchEnd = now;
+        }, false);
     </script>
 </body>
 </html>
